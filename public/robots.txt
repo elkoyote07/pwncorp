@@ -1,0 +1,5 @@
+# SecureCorp Web Crawler Policy
+User-agent: *
+Disallow: /admin
+Disallow: /api/debug
+Disallow: /backup/
