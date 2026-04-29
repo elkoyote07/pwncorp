@@ -25,7 +25,7 @@ export default function LoginPage() {
       const data = await res.json();
 
       if (res.ok) {
-        router.push("/admin");
+        window.location.href = "/admin";
       } else {
         setError(data.error || "Login failed");
       }

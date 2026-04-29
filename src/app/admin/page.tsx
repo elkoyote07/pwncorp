@@ -31,7 +31,7 @@ export default function AdminPage() {
     }
 
     try {
-      const decoded = JSON.parse(atob(token));
+      const decoded = JSON.parse(atob(decodeURIComponent(token)));
       if (decoded.user && decoded.role === "admin") {
         setAuthed(true);
         setUser(decoded.user);
