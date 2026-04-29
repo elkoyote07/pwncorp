@@ -15,8 +15,10 @@ export default function AdminPage() {
     // Check auth from cookie
     const cookies = document.cookie.split(";").reduce(
       (acc, c) => {
-        const [k, v] = c.trim().split("=");
-        acc[k] = v;
+        const idx = c.indexOf("=");
+        if (idx !== -1) {
+          acc[c.slice(0, idx).trim()] = c.slice(idx + 1).trim();
+        }
         return acc;
       },
       {} as Record<string, string>
